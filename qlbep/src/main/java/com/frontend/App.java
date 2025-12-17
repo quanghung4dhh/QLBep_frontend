@@ -19,7 +19,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         // SỬA DÒNG NÀY: Đổi "primary" thành "login"
         // 800, 500 là chiều rộng và cao của cửa sổ (khớp với file fxml của bạn)
-        scene = new Scene(loadFXML("login"), 800, 500);
+        scene = new Scene(loadFXML("main_layout"), 900, 600);
         
         stage.setScene(scene);
         stage.setTitle("Hệ thống Quản lý Bếp ăn"); // Đặt tiêu đề cho cửa sổ

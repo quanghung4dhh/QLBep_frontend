@@ -1,6 +1,5 @@
 package com.frontend.controllers; // Đảm bảo đúng tên package của bạn
 
-import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
