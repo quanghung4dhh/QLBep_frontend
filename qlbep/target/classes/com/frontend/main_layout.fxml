@@ -9,20 +9,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="600.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frontend.controllers.MainLayoutController">
+<BorderPane fx:id="mainBorderPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.frontend.controllers.MainLayoutController">
    
    <left>
       <VBox prefHeight="600.0" prefWidth="280.0" styleClass="sidebar" BorderPane.alignment="CENTER">
-         <children>
-            
-            <VBox alignment="CENTER" prefHeight="180.0" prefWidth="280.0" spacing="15.0">
+         <children> <VBox alignment="CENTER" prefHeight="180.0" prefWidth="280.0" spacing="15.0">
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/logo.jpg" />
+                        <Image url="@images/logo.png" />
                      </image>
                   </ImageView>
-                  
                   <Label text="KITCHEN MANAGER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -34,12 +31,14 @@
                </VBox.margin>
             </VBox>
 
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn, sidebar-btn-active" text="Trang chủ" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Quản lý Nhân viên" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Thực đơn món ăn" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Kho nguyên liệu" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Đơn hàng / Bếp" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Báo cáo doanh thu" />
+            <Button fx:id="btnTrangChu" onAction="#handleDashboardButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Trang chủ" />
+            
+            <Button fx:id="btnNhanVien" onAction="#handleStaffButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Quản lý Nhân viên" />
+            
+            <Button fx:id="btnThucDon" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Thực đơn món ăn" />
+            <Button fx:id="btnKho" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Kho nguyên liệu" />
+            <Button fx:id="btnDonHang" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Đơn hàng / Bếp" />
+            <Button fx:id="btnBaoCao" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="sidebar-btn" text="Báo cáo doanh thu" />
             
             <VBox VBox.vgrow="ALWAYS" />
             
@@ -48,10 +47,10 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-         </children>
-      </VBox>
+            
+         </children> </VBox>
    </left>
 
    <center>
-      </center>
+   </center>
 </BorderPane>

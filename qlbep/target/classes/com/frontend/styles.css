@@ -1,49 +1,124 @@
 /* 1. MÀU NỀN CỘT MENU (Quan trọng: Phải có dòng này chữ mới nổi) */
 .sidebar {
-    -fx-background-color: #2c3e50; /* Màu xanh đen đậm */
+  -fx-background-color: #2c3e50; /* Màu xanh đen đậm */
 }
 
 /* 2. Style cho nút menu */
 .sidebar-btn {
-    -fx-background-color: transparent;
-    -fx-text-fill: #ecf0f1; /* Chữ màu trắng sáng */
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-size: 18px; /* Tăng từ 16px lên 18px */
-    -fx-padding: 15 15 15 20; 
-    -fx-cursor: hand;
-    -fx-font-weight: bold;
+  -fx-background-color: transparent;
+  -fx-text-fill: #ecf0f1; /* Chữ màu trắng sáng */
+  -fx-alignment: CENTER_LEFT;
+  -fx-font-size: 18px; /* Tăng từ 16px lên 18px */
+  -fx-padding: 15 15 15 20;
+  -fx-cursor: hand;
+  -fx-font-weight: bold;
 }
 
 .sidebar-btn:hover {
-    -fx-background-color: #34495e;
-    -fx-border-color: transparent transparent transparent #3498db;
-    -fx-border-width: 0 0 0 6; /* Viền dày hơn */
+  -fx-background-color: #34495e;
+  -fx-border-color: transparent transparent transparent #3498db;
+  -fx-border-width: 0 0 0 6; /* Viền dày hơn */
 }
 
 /* Nút đang được chọn */
 .sidebar-btn-active {
-    -fx-background-color: #2980b9;
-    -fx-text-fill: white;
-    -fx-border-color: transparent transparent transparent white;
-    -fx-border-width: 0 0 0 6;
+  -fx-background-color: #2980b9;
+  -fx-text-fill: white;
+  -fx-border-color: transparent transparent transparent white;
+  -fx-border-width: 0 0 0 6;
 }
 
 /* 3. Style cho thẻ thống kê (Dashboard) */
 .stats-card {
-    -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
-    -fx-padding: 25; /* Thẻ to hơn nữa */
+  -fx-background-color: white;
+  -fx-background-radius: 15;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);
+  -fx-padding: 25; /* Thẻ to hơn nữa */
 }
 
 .card-title {
-    -fx-text-fill: #7f8c8d;
-    -fx-font-size: 18px; /* Tiêu đề thẻ to hơn */
-    -fx-font-weight: bold;
+  -fx-text-fill: #7f8c8d;
+  -fx-font-size: 18px; /* Tiêu đề thẻ to hơn */
+  -fx-font-weight: bold;
 }
 
 .card-value {
-    -fx-text-fill: #2c3e50;
-    -fx-font-size: 40px; /* Số liệu cực to (40px) */
-    -fx-font-weight: bold;
+  -fx-text-fill: #2c3e50;
+  -fx-font-size: 40px; /* Số liệu cực to (40px) */
+  -fx-font-weight: bold;
+}
+/* --- STYLE CHO TAB PANE (Thanh chuyển tab) --- */
+.tab-pane .tab-header-area .tab-header-background {
+  -fx-background-color: transparent; /* Xóa màu nền xám mặc định */
+}
+
+.tab {
+  -fx-background-color: transparent;
+  -fx-padding: 10 20;
+  -fx-border-color: transparent transparent #bdc3c7 transparent; /* Viền dưới mờ */
+  -fx-border-width: 0 0 2 0;
+}
+
+.tab:selected {
+  -fx-border-color: transparent transparent #3498db transparent; /* Viền dưới xanh khi chọn */
+  -fx-border-width: 0 0 3 0;
+}
+
+.tab-label {
+  -fx-text-fill: #7f8c8d;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+  -fx-text-fill: #3498db; /* Chữ xanh khi chọn */
+}
+
+/* --- STYLE CHO TABLE VIEW (Bảng dữ liệu) --- */
+.table-view {
+  -fx-background-color: white;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+}
+
+.table-view .column-header-background {
+  -fx-background-color: #ecf0f1; /* Nền tiêu đề cột */
+  -fx-background-radius: 5 5 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+  -fx-background-color: transparent;
+  -fx-size: 40px; /* Chiều cao header */
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: #2c3e50;
+  -fx-font-weight: bold;
+  -fx-alignment: CENTER_LEFT;
+}
+
+/* --- STYLE CHO INPUT (Ô nhập liệu) --- */
+.input-field {
+  -fx-background-color: white;
+  -fx-border-color: #bdc3c7;
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+  -fx-padding: 8;
+}
+
+.input-field:focused {
+  -fx-border-color: #3498db;
+}
+
+.action-btn {
+  -fx-background-color: #27ae60; /* Màu xanh lá cho nút hành động */
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-cursor: hand;
+  -fx-background-radius: 5;
+}
+.action-btn:hover {
+  -fx-background-color: #2ecc71;
 }
