@@ -3,5 +3,6 @@ module com.frontend {
     requires javafx.fxml;
 
     opens com.frontend to javafx.fxml;
+    opens com.frontend.controllers to javafx.fxml;
     exports com.frontend;
 }

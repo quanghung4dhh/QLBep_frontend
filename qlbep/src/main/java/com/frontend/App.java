@@ -17,12 +17,17 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        // SỬA DÒNG NÀY: Đổi "primary" thành "login"
+        // 800, 500 là chiều rộng và cao của cửa sổ (khớp với file fxml của bạn)
+        scene = new Scene(loadFXML("login"), 800, 500);
+        
         stage.setScene(scene);
+        stage.setTitle("Hệ thống Quản lý Bếp ăn"); // Đặt tiêu đề cho cửa sổ
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    // Hàm hỗ trợ chuyển cảnh (Sau này đăng nhập thành công sẽ dùng hàm này để sang trang chủ)
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
@@ -34,5 +39,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
