@@ -13,30 +13,39 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
+  private static Scene scene;
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        // SỬA DÒNG NÀY: Đổi "primary" thành "login"
-        // 800, 500 là chiều rộng và cao của cửa sổ (khớp với file fxml của bạn)
-        scene = new Scene(loadFXML("main_layout"), 900, 600);
-        
-        stage.setScene(scene);
-        stage.setTitle("Hệ thống Quản lý Bếp ăn"); // Đặt tiêu đề cho cửa sổ
-        stage.show();
-    }
+  @Override
+  public void start(Stage stage) throws IOException {
+    // SỬA LẠI THÀNH "login" (Lúc nãy bạn đang để "main_layout")
+    // Kích thước login nên nhỏ gọn (800x500)
+    scene = new Scene(loadFXML("login"), 800, 500);
 
-    // Hàm hỗ trợ chuyển cảnh (Sau này đăng nhập thành công sẽ dùng hàm này để sang trang chủ)
-    public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+    stage.setScene(scene);
+    stage.setTitle("Hệ thống Quản lý Bếp ăn");
+    stage.show();
+  }
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+  // Hàm này để các Controller khác gọi tới khi muốn chuyển cảnh
+  // Ví dụ: LoginController gọi setRoot("main_layout")
+  public static void setRoot(String fxml) throws IOException {
+    scene.setRoot(loadFXML(fxml));
 
-    public static void main(String[] args) {
-        launch();
+    // Mẹo nhỏ: Khi vào trang chủ thì nên phóng to cửa sổ ra cho đẹp
+    if (fxml.equals("main_layout")) {
+      Stage stage = (Stage) scene.getWindow();
+      stage.setWidth(1000); // Chiều rộng mới
+      stage.setHeight(650); // Chiều cao mới
+      stage.centerOnScreen(); // Căn giữa màn hình lại
     }
+  }
+
+  private static Parent loadFXML(String fxml) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+    return fxmlLoader.load();
+  }
+
+  public static void main(String[] args) {
+    launch();
+  }
 }
